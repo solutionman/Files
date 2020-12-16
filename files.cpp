@@ -4,8 +4,11 @@ using namespace std;
 
 int main()
 {
+    cout << "write the name of the file: ";
+    string fileName;
+    cin >> fileName;
     // create and open a text file
-    ofstream MyFile("test.txt");
+    ofstream MyFile(fileName);
 
     // write to the file
     MyFile << "Your notes here: " << endl;
