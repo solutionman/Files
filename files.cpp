@@ -8,7 +8,12 @@ int main()
     ofstream MyFile("test.txt");
 
     // write to the file
-    MyFile << "Something here";
+    MyFile << "Your notes here: ";
+    
+    cout << "Write something to file " << endl;
+    string fromUser;
+    cin >> fromUser;
+    MyFile << fromUser;
 
     // close file
     MyFile.close();
