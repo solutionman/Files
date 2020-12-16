@@ -8,7 +8,7 @@ int main()
     ofstream MyFile("test.txt");
 
     // write to the file
-    MyFile << "Your notes here: ";
+    MyFile << "Your notes here: " << endl;
     
     cout << "Write something to file " << endl;
     string fromUser;
@@ -28,7 +28,7 @@ int main()
     while(getline(MyReadFile, myText))
     {
         // Output the text from the file
-	cout << myText;
+	cout << myText << endl;
     }
     // close the file
     MyReadFile.close();
