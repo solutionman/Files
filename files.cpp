@@ -6,7 +6,8 @@ int main()
 {
     cout << "write the name of the file: ";
     string fileName;
-    cin >> fileName;
+    getline(cin, fileName);
+    //cin >> fileName;
     // create and open a text file
     ofstream MyFile(fileName);
 
@@ -15,7 +16,8 @@ int main()
     
     cout << "Write something to file " << endl;
     string fromUser;
-    cin >> fromUser;
+    //cin >> fromUser;
+    getline(cin, fromUser);
     MyFile << fromUser;
 
     // close file
