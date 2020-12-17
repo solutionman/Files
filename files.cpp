@@ -24,7 +24,7 @@ int main()
     string myText;
 
     // read from text file
-    ifstream MyReadFile("test.txt");
+    ifstream MyReadFile(fileName);
 
     // use while loop thogether with the getline() function
     // to read the file line by line
