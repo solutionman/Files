@@ -20,10 +20,8 @@ int main()
         cout << "File " << fileName << " already exists. You want rewrite it? y/n ";
         string feedback;
         getline(cin, feedback);
-        if( feedback.compare("y") != 0 )
-        {
-            return 0;
-        }
+//        if( feedback.compare("y") != 0 ){ return 0; }
+        if( feedback != "y" ){ return 0;}
     }
 
     // create and open a text file
