@@ -2,12 +2,25 @@
 #include <fstream>
 using namespace std;
 
+// check is file exists
+inline bool isFileExists (const std::string& name) {
+    ifstream f(name.c_str());
+    return f.good();
+}
+
 int main()
 {
     cout << "write the name of the file: ";
     string fileName;
     getline(cin, fileName);
-    //cin >> fileName;
+
+    // check is file exists
+    if( isFileExists(fileName) )
+    {
+        cout << "File " << fileName << " already exists.";
+        return 0;
+    }
+
     // create and open a text file
     ofstream MyFile(fileName);
 
