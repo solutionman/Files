@@ -17,8 +17,13 @@ int main()
     // check is file exists
     if( isFileExists(fileName) )
     {
-        cout << "File " << fileName << " already exists.";
-        return 0;
+        cout << "File " << fileName << " already exists. You want rewrite it? y/n ";
+        string feedback;
+        getline(cin, feedback);
+        if( feedback.compare("y") != 0 )
+        {
+            return 0;
+        }
     }
 
     // create and open a text file
