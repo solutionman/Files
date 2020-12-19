@@ -3,7 +3,8 @@
 using namespace std;
 
 // check is file exists
-inline bool isFileExists (const std::string& name) {
+inline bool isFileExists (const std::string& name)
+{
     ifstream f(name.c_str());
     return f.good();
 }
