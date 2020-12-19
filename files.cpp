@@ -18,11 +18,25 @@ int main()
     // check is file exists
     if( isFileExists(fileName) )
     {
-        cout << "File " << fileName << " already exists. You want rewrite it? y/n ";
+        cout << "File " << fileName << " already exists. You want rewrite it? 'y/n' ";
         string feedback;
         getline(cin, feedback);
 //        if( feedback.compare("y") != 0 ){ return 0; }
-        if( feedback != "y" ){ return 0;}
+        if( feedback != "y" ){ return 0; }
+        cout << "Open or create new it ? o/c ";
+        getline(cin, feedback);
+        if( feedback == "o" )
+        {
+            cout << "opening file" << endl;
+            // open file
+            std::ofstream out;
+            out.open(fileName, std::ios::app);
+            string addToFile;
+            getline(cin, addToFile);
+            out << addToFile;
+            out.close();
+            return 0;
+        }
     }
 
     // create and open a text file
