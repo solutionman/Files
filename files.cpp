@@ -33,7 +33,7 @@ int main()
             out.open(fileName, std::ios::app);
             string addToFile;
             getline(cin, addToFile);
-            out << addToFile;
+            out << endl << addToFile;
             out.close();
             return 0;
         }
