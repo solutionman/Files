@@ -27,7 +27,7 @@ int main()
         getline(cin, feedback);
         if( feedback == "o" )
         {
-            cout << "opening file" << endl;
+            cout << "write here what you want add to the file" << endl;
             // open file
             std::ofstream out;
             out.open(fileName, std::ios::app);
