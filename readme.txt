@@ -10,5 +10,5 @@ g++ *.cpp -o out
 to run:
 
 ./out
-
+out.exe
 
