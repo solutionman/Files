@@ -6,7 +6,7 @@ using namespace std;
 #define FILES_FILEOPERATIONS_H
 
 
-class fileOperations {
+class FileOperations {
     public:
         void writeToFile(string fileName);
 };

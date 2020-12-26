@@ -1,8 +1,8 @@
 #include <iostream>
-#include "fileOperations.h"
+#include "FileOperations.h"
 using namespace std;
 
-void fileOperations::writeToFile(string fileName) {
+void FileOperations::writeToFile(string fileName) {
     cout << "write here what you want add to the file, to quit enter :q" << endl;
     // open file
     string addToFile;

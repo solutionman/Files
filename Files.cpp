@@ -1,5 +1,5 @@
 #include <iostream>
-#include "fileOperations.h"
+#include "FileOperations.h"
 using namespace std;
 
 // check is file exists
@@ -15,7 +15,7 @@ int main()
     string fileName;
     getline(cin, fileName);
 
-    fileOperations fileOperations;
+    FileOperations fileOperations;
 
     // check is file exists
     if( isFileExists(fileName) )
