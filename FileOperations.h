@@ -5,11 +5,9 @@ using namespace std;
 #ifndef FILES_FILEOPERATIONS_H
 #define FILES_FILEOPERATIONS_H
 
-
 class FileOperations {
     public:
-        void writeToFile(string fileName);
+        static void writeToFile(const string& fileName);
 };
-
 
 #endif //FILES_FILEOPERATIONS_H

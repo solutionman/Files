@@ -15,8 +15,6 @@ int main()
     string fileName;
     getline(cin, fileName);
 
-    FileOperations fileOperations;
-
     // check is file exists
     if( isFileExists(fileName) )
     {
@@ -29,7 +27,7 @@ int main()
         getline(cin, feedback);
         if( feedback == "o" )
         {
-            fileOperations.writeToFile(fileName);
+            FileOperations::writeToFile(fileName);
             return 0;
         }
     }
@@ -39,7 +37,7 @@ int main()
 
     // write to the file
     MyFile << "Your notes here: " << endl;
-    fileOperations.writeToFile(fileName);
+    FileOperations::writeToFile(fileName);
 
     string myText;
 
@@ -55,7 +53,6 @@ int main()
     }
     // close the file
     MyReadFile.close();
-
 
     return 0;
 }

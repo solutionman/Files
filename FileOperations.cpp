@@ -2,7 +2,7 @@
 #include "FileOperations.h"
 using namespace std;
 
-void FileOperations::writeToFile(string fileName) {
+void FileOperations::writeToFile(const string& fileName) {
     cout << "write here what you want add to the file, to quit enter :q" << endl;
     // open file
     string addToFile;
