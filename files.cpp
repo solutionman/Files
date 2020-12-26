@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include "fileOperations.h"
 using namespace std;
 
 // check is file exists
@@ -9,29 +10,13 @@ inline bool isFileExists (const std::string& name)
     return f.good();
 }
 
-void writeToFile(string fileName){
-    cout << "write here what you want add to the file, to quit enter :q" << endl;
-    // open file
-    string addToFile;
-    do
-    {
-        std::ofstream out;
-        out.open(fileName, std::ios::app);
-        getline(cin, addToFile);
-        if(addToFile!=":q")
-        {
-            out << endl << addToFile;
-        }
-        out.close();
-    } while (addToFile!=":q");
-
-}
-
 int main()
 {
     cout << "write the name of the file: ";
     string fileName;
     getline(cin, fileName);
+
+    fileOperations fileOperations;
 
     // check is file exists
     if( isFileExists(fileName) )
@@ -45,7 +30,7 @@ int main()
         getline(cin, feedback);
         if( feedback == "o" )
         {
-            writeToFile(fileName);
+            fileOperations.writeToFile(fileName);
             return 0;
         }
     }
@@ -55,7 +40,7 @@ int main()
 
     // write to the file
     MyFile << "Your notes here: " << endl;
-    writeToFile(fileName);
+    fileOperations.writeToFile(fileName);
 
     string myText;
 
