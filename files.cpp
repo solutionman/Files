@@ -9,6 +9,24 @@ inline bool isFileExists (const std::string& name)
     return f.good();
 }
 
+void writeToFile(string fileName){
+    cout << "write here what you want add to the file, to quit enter :q" << endl;
+    // open file
+    string addToFile;
+    do
+    {
+        std::ofstream out;
+        out.open(fileName, std::ios::app);
+        getline(cin, addToFile);
+        if(addToFile!=":q")
+        {
+            out << endl << addToFile;
+        }
+        out.close();
+    } while (addToFile!=":q");
+
+}
+
 int main()
 {
     cout << "write the name of the file: ";
@@ -27,20 +45,7 @@ int main()
         getline(cin, feedback);
         if( feedback == "o" )
         {
-            cout << "write here what you want add to the file, to quit enter :q" << endl;
-            // open file
-            string addToFile;
-            do
-            {
-                std::ofstream out;
-                out.open(fileName, std::ios::app);
-                getline(cin, addToFile);
-                if(addToFile!=":q")
-                {
-                    out << endl << addToFile;
-                }
-                out.close();
-            } while (addToFile!=":q");
+            writeToFile(fileName);
             return 0;
         }
     }
@@ -50,15 +55,7 @@ int main()
 
     // write to the file
     MyFile << "Your notes here: " << endl;
-    
-    cout << "Write something to file " << endl;
-    string fromUser;
-    //cin >> fromUser;
-    getline(cin, fromUser);
-    MyFile << fromUser;
-
-    // close file
-    MyFile.close();
+    writeToFile(fileName);
 
     string myText;
 
