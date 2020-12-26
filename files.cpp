@@ -27,14 +27,20 @@ int main()
         getline(cin, feedback);
         if( feedback == "o" )
         {
-            cout << "write here what you want add to the file" << endl;
+            cout << "write here what you want add to the file, to quit enter :q" << endl;
             // open file
-            std::ofstream out;
-            out.open(fileName, std::ios::app);
             string addToFile;
-            getline(cin, addToFile);
-            out << endl << addToFile;
-            out.close();
+            do
+            {
+                std::ofstream out;
+                out.open(fileName, std::ios::app);
+                getline(cin, addToFile);
+                if(addToFile!=":q")
+                {
+                    out << endl << addToFile;
+                }
+                out.close();
+            } while (addToFile!=":q");
             return 0;
         }
     }
