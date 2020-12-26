@@ -2,21 +2,13 @@
 #include "FileOperations.h"
 using namespace std;
 
-// check is file exists
-inline bool isFileExists (const std::string& name)
-{
-    ifstream f(name.c_str());
-    return f.good();
-}
-
 int main()
 {
     cout << "write the name of the file: ";
     string fileName;
     getline(cin, fileName);
 
-    // check is file exists
-    if( isFileExists(fileName) )
+    if( FileOperations::isFileExists(fileName) )
     {
         cout << "File " << fileName << " already exists. You want rewrite it? 'y/n' ";
         string feedback;

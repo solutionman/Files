@@ -2,7 +2,8 @@
 #include "FileOperations.h"
 using namespace std;
 
-void FileOperations::writeToFile(const string& fileName) {
+void FileOperations::writeToFile(const string& fileName)
+{
     cout << "write here what you want add to the file, to quit enter :q" << endl;
     // open file
     string addToFile;
@@ -17,4 +18,10 @@ void FileOperations::writeToFile(const string& fileName) {
         }
         out.close();
     } while (addToFile!=":q");
+}
+
+bool FileOperations::isFileExists(const string &name)
+{
+    ifstream f(name.c_str());
+    return f.good();
 }

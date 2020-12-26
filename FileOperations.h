@@ -5,9 +5,11 @@ using namespace std;
 #ifndef FILES_FILEOPERATIONS_H
 #define FILES_FILEOPERATIONS_H
 
-class FileOperations {
+class FileOperations
+{
     public:
         static void writeToFile(const string& fileName);
+        static bool isFileExists(const string& name);
 };
 
 #endif //FILES_FILEOPERATIONS_H
