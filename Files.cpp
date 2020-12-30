@@ -31,20 +31,8 @@ int main()
     MyFile << "Your notes here: " << endl;
     FileOperations::writeToFile(fileName);
 
-    string myText;
-
-    // read from text file
-    ifstream MyReadFile(fileName);
-
-    // use while loop thogether with the getline() function
-    // to read the file line by line
-    while(getline(MyReadFile, myText))
-    {
-        // Output the text from the file
-	cout << myText << endl;
-    }
-    // close the file
-    MyReadFile.close();
+    FileOperations fileOperations;
+    fileOperations.printToScreen(fileName);
 
     return 0;
 }
