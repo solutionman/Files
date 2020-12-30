@@ -10,7 +10,7 @@ class FileOperations
     public:
         static void writeToFile(const string& fileName);
         static bool isFileExists(const string& name);
-        void printToScreen(string fileName);
+        static void printToScreen(const string& fileName);
 };
 
 #endif //FILES_FILEOPERATIONS_H

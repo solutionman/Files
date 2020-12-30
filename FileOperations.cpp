@@ -26,20 +26,28 @@ bool FileOperations::isFileExists(const string &name)
     return f.good();
 }
 
-void FileOperations::printToScreen(string fileName)
+void FileOperations::printToScreen(const string& fileName)
 {
-    string myText;
 
-    // read from text file
-    ifstream MyReadFile(fileName);
-
-    // use while loop thogether with the getline() function
-    // to read the file line by line
-    while(getline(MyReadFile, myText))
+    cout << "Show result? y/n ";
+    string feedBack;
+    getline(cin, feedBack);
+    if(feedBack == "y")
     {
-        // Output the text from the file
-        cout << myText << endl;
+        string myText;
+
+        // read from text file
+        ifstream MyReadFile(fileName);
+
+        // use while loop thogether with the getline() function
+        // to read the file line by line
+        while(getline(MyReadFile, myText))
+        {
+            // Output the text from the file
+            cout << myText << endl;
+        }
+        // close the file
+        MyReadFile.close();
     }
-    // close the file
-    MyReadFile.close();
+
 }

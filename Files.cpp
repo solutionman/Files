@@ -20,6 +20,8 @@ int main()
         if( feedback == "o" )
         {
             FileOperations::writeToFile(fileName);
+
+            FileOperations::printToScreen(fileName);
             return 0;
         }
     }
@@ -31,8 +33,7 @@ int main()
     MyFile << "Your notes here: " << endl;
     FileOperations::writeToFile(fileName);
 
-    FileOperations fileOperations;
-    fileOperations.printToScreen(fileName);
+    FileOperations::printToScreen(fileName);
 
     return 0;
 }
