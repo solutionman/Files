@@ -1,39 +1,35 @@
-#include <iostream>
 #include "FileOperations.h"
+#include <iostream>
+
 using namespace std;
 
-void FileOperations::writeToFile(const string& fileName)
-{
-    cout << endl << "write here what you want add to the file, to quit enter :q" << endl;
+void FileOperations::writeToFile(const string &fileName) {
+    cout << endl
+         << "write here what you want add to the file, to quit enter :q" << endl;
     // open file
     string addToFile;
-    do
-    {
+    do {
         std::ofstream out;
         out.open(fileName, std::ios::app);
         getline(cin, addToFile);
-        if(addToFile!=":q")
-        {
+        if (addToFile != ":q") {
             out << endl << addToFile;
         }
         out.close();
-    } while (addToFile!=":q");
+    } while (addToFile != ":q");
 }
 
-bool FileOperations::isFileExists(const string &name)
-{
+bool FileOperations::isFileExists(const string &name) {
     ifstream f(name.c_str());
     return f.good();
 }
 
-void FileOperations::printToScreen(const string& fileName)
-{
+void FileOperations::printToScreen(const string &fileName) {
 
     cout << "Show what file contains? y/n ";
     string feedBack;
     getline(cin, feedBack);
-    if(feedBack == "y")
-    {
+    if (feedBack == "y") {
         string myText;
 
         // read from text file
@@ -41,13 +37,11 @@ void FileOperations::printToScreen(const string& fileName)
 
         // use while loop thogether with the getline() function
         // to read the file line by line
-        while(getline(MyReadFile, myText))
-        {
+        while (getline(MyReadFile, myText)) {
             // Output the text from the file
             cout << myText << endl;
         }
         // close the file
         MyReadFile.close();
     }
-
 }
