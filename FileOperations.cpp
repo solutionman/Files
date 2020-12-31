@@ -4,7 +4,7 @@ using namespace std;
 
 void FileOperations::writeToFile(const string& fileName)
 {
-    cout << "write here what you want add to the file, to quit enter :q" << endl;
+    cout << endl << "write here what you want add to the file, to quit enter :q" << endl;
     // open file
     string addToFile;
     do
@@ -29,7 +29,7 @@ bool FileOperations::isFileExists(const string &name)
 void FileOperations::printToScreen(const string& fileName)
 {
 
-    cout << "Show result? y/n ";
+    cout << "Show what file contains? y/n ";
     string feedBack;
     getline(cin, feedBack);
     if(feedBack == "y")

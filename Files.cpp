@@ -19,8 +19,8 @@ int main()
         getline(cin, feedback);
         if( feedback == "o" )
         {
+            FileOperations::printToScreen(fileName);
             FileOperations::writeToFile(fileName);
-
             FileOperations::printToScreen(fileName);
             return 0;
         }
