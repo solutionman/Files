@@ -17,7 +17,7 @@ int main() {
         if (feedback != "y") {
             return 0;
         }
-        cout << "Open or create new it ? o/c ";
+        cout << "Open or create new? o/c ";
         getline(cin, feedback);
         if (feedback == "o") {
             FileOperations::printToScreen(fileName);
