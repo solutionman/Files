@@ -1,8 +1,6 @@
 #include "FileOperations.h"
 #include <iostream>
 
-using namespace std;
-
 int main() {
     cout << "write the name of the file: ";
     string fileName;
