@@ -7,10 +7,13 @@ int main(int argc, char** argv) {
     for(int i = 0; i < argc; i++){
         cout << argv[i] << endl;
     }
-
-    cout << "write the name of the file: ";
     string fileName;
-    getline(cin, fileName);
+    if( argc > 1 ){
+        fileName = argv[1];
+    } else{
+        cout << "write the name of the file: ";
+        getline(cin, fileName);
+    }
 
     if (FileOperations::isFileExists(fileName)) {
         cout << "File " << fileName
