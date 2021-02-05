@@ -1,16 +1,16 @@
 #include "FileOperations.h"
 #include <iostream>
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
 
     cout << " You entered  " << argc << " arguments: " << endl;
-    for(int i = 0; i < argc; i++){
+    for (int i = 0; i < argc; i++) {
         cout << argv[i] << endl;
     }
     string fileName;
-    if( argc > 1 ){
+    if (argc > 1) {
         fileName = argv[1];
-    } else{
+    } else {
         cout << "write the name of the file: ";
         getline(cin, fileName);
     }
