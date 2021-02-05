@@ -18,9 +18,9 @@ int main(int argc, char **argv) {
     string doRewrite;
     if (argc > 2) {
         doRewrite = argv[2];
-        cout << rewrite.compare(doRewrite) << endl;
+        cout << "rewrite.compare(doRewrite) " << rewrite.compare(doRewrite) << endl;
     }
-    if (FileOperations::isFileExists(fileName) && rewrite.compare(doRewrite) != 0) {
+    if (FileOperations::isFileExists(fileName) && rewrite != doRewrite) {
         cout << "File " << fileName
              << " already exists. You want rewrite it? 'y/n' ";
         string feedback;
