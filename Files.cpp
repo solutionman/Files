@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
     string fileName;
     if (argc > 1) {
         fileName = argv[1];
-        if(fileName.compare("-h")==0 || fileName.compare("--h")==0 || fileName.compare("-help")==0 || fileName.compare("--help")==0){
+        if(fileName=="-h" || fileName=="--h" || fileName=="-help" || fileName=="--help"){
             cout << "if file in current folder just type name of file with extension:\n"
                     "./out\n"
                     "test.txt\n"
