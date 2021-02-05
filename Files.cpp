@@ -14,8 +14,13 @@ int main(int argc, char **argv) {
         cout << "write the name of the file: ";
         getline(cin, fileName);
     }
-
-    if (FileOperations::isFileExists(fileName)) {
+    string rewrite = "r";
+    string doRewrite;
+    if (argc > 2) {
+        doRewrite = argv[2];
+        cout << rewrite.compare(doRewrite) << endl;
+    }
+    if (FileOperations::isFileExists(fileName) && rewrite.compare(doRewrite) != 0) {
         cout << "File " << fileName
              << " already exists. You want rewrite it? 'y/n' ";
         string feedback;
