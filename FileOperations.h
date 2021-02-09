@@ -1,18 +1,17 @@
 #include <iostream>
 #include <fstream>
 
-using namespace std;
 
 #ifndef FILES_FILEOPERATIONS_H
 #define FILES_FILEOPERATIONS_H
 
 class FileOperations {
 public:
-    static void writeToFile(const string &fileName);
+    static void writeToFile(const std::string &fileName);
 
-    static bool isFileExists(const string &name);
+    static bool isFileExists(const std::string &name);
 
-    static void printToScreen(const string &fileName);
+    static void printToScreen(const std::string &fileName);
 };
 
 #endif //FILES_FILEOPERATIONS_H

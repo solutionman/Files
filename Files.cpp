@@ -1,55 +1,39 @@
 #include "FileOperations.h"
+#include "Help.h"
 #include <iostream>
 
 int main(int argc, char **argv) {
 
-    cout << " You entered  " << argc << " arguments: " << endl;
+    std::cout << " You entered  " << argc << " arguments: " << std::endl;
     for (int i = 0; i < argc; i++) {
-        cout << argv[i] << endl;
+        std::cout << argv[i] << std::endl;
     }
-    string fileName;
+    std::string fileName;
+
     if (argc > 1) {
-        fileName = argv[1];
-        if (fileName == "-h" || fileName == "--h" || fileName == "-help" || fileName == "--help") {
-            cout << "if file in current folder just type name of file with extension:\n"
-                    "./out\n"
-                    "test.txt\n"
-                    "\n"
-                    "out.exe\n"
-                    "test.txt\n"
-                    "\n"
-                    "if file in another directory, then name of file and path to file:\n"
-                    "./out\n"
-                    "write the name of the file: /home/dima/Documents/test.txt\n"
-                    "\n"
-                    "program can take optional arguments: nameOfFile and r\n"
-                    "for example this command will create or open file test.txt\n"
-                    "./out test.txt\n"
-                    "and this command will create and replace current file (if it already exists) test.txt\n"
-                    "./out test.txt r" << endl;
-            return 0;
-        }
+        Help help;
+        help.getHelp(argc, argv, fileName);
     } else {
-        cout << "write the name of the file: ";
-        getline(cin, fileName);
+        std::cout << "write the name of the file: ";
+        getline(std::cin, fileName);
     }
-    string rewrite = "r";
-    string doRewrite;
+    std::string rewrite = "r";
+    std::string doRewrite;
     if (argc > 2) {
         doRewrite = argv[2];
-        cout << "rewrite.compare(doRewrite) " << rewrite.compare(doRewrite) << endl;
+        std::cout << "rewrite.compare(doRewrite) " << rewrite.compare(doRewrite) << std::endl;
     }
     if (FileOperations::isFileExists(fileName) && rewrite != doRewrite) {
-        cout << "File " << fileName
+        std::cout << "File " << fileName
              << " already exists. You want rewrite it? 'y/n' ";
-        string feedback;
-        getline(cin, feedback);
+        std::string feedback;
+        getline(std::cin, feedback);
         //        if( feedback.compare("y") != 0 ){ return 0; }
         if (feedback != "y") {
             return 0;
         }
-        cout << "Open or create new? o/c ";
-        getline(cin, feedback);
+        std::cout << "Open or create new? o/c ";
+        getline(std::cin, feedback);
         if (feedback == "o") {
             FileOperations::printToScreen(fileName);
             FileOperations::writeToFile(fileName);
@@ -59,10 +43,10 @@ int main(int argc, char **argv) {
     }
 
     // create and open a text file
-    ofstream MyFile(fileName);
+    std::ofstream MyFile(fileName);
 
     // write to the file
-    MyFile << "Your notes here: " << endl;
+    MyFile << "Your notes here: " << std::endl;
     FileOperations::writeToFile(fileName);
 
     FileOperations::printToScreen(fileName);

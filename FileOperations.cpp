@@ -1,43 +1,43 @@
 #include "FileOperations.h"
 #include <iostream>
 
-void FileOperations::writeToFile(const string &fileName) {
-    cout << endl;
-    cout << "write here what you want add to the file, to quit enter :q" << endl;
+void FileOperations::writeToFile(const std::string &fileName) {
+    std::cout << std::endl;
+    std::cout << "write here what you want add to the file, to quit enter :q" << std::endl;
     // open file
-    string addToFile;
+    std::string addToFile;
     do {
         std::ofstream out;
         out.open(fileName, std::ios::app);
-        getline(cin, addToFile);
+        getline(std::cin, addToFile);
         if (addToFile != ":q") {
-            out << endl << addToFile;
+            out << std::endl << addToFile;
         }
         out.close();
     } while (addToFile != ":q");
 }
 
-bool FileOperations::isFileExists(const string &name) {
-    ifstream f(name.c_str());
+bool FileOperations::isFileExists(const std::string &name) {
+    std::ifstream f(name.c_str());
     return f.good();
 }
 
-void FileOperations::printToScreen(const string &fileName) {
+void FileOperations::printToScreen(const std::string &fileName) {
 
-    cout << "Show what file contains? y/n ";
-    string feedBack;
-    getline(cin, feedBack);
+    std::cout << "Show what file contains? y/n ";
+    std::string feedBack;
+    getline(std::cin, feedBack);
     if (feedBack == "y") {
-        string myText;
+        std::string myText;
 
         // read from text file
-        ifstream MyReadFile(fileName);
+        std::ifstream MyReadFile(fileName);
 
         // use while loop thogether with the getline() function
         // to read the file line by line
         while (getline(MyReadFile, myText)) {
             // Output the text from the file
-            cout << myText << endl;
+            std::cout << myText << std::endl;
         }
         // close the file
         MyReadFile.close();
