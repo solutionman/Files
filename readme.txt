@@ -23,7 +23,9 @@ write the name of the file: /home/dima/Documents/test.txt
 program can take optional arguments: nameOfFile and r
 for example this command will create or open file test.txt
 ./out test.txt
-and this command will create and replace current file (if it already exists) test.txt
+this command will create and replace current file (if it already exists) test.txt
 ./out test.txt r
+and this command will open file test.txt for editing
+./out test.txt o
 
 

@@ -17,12 +17,20 @@ int main(int argc, char **argv) {
         getline(std::cin, fileName);
     }
     std::string rewrite = "r";
-    std::string doRewrite;
+    std::string open = "o";
+    std::string secondArg;
     if (argc > 2) {
-        doRewrite = argv[2];
-        std::cout << "rewrite.compare(doRewrite) " << rewrite.compare(doRewrite) << std::endl;
+        secondArg = argv[2];
+        std::cout << "rewrite.compare(doRewrite) " << rewrite.compare(secondArg) << std::endl;
     }
-    if (FileOperations::isFileExists(fileName) && rewrite != doRewrite) {
+    //TODO open existing file with o argument
+    if (FileOperations::isFileExists(fileName) && rewrite != secondArg) {
+        if(open == secondArg){
+            FileOperations::printToScreen(fileName);
+            FileOperations::writeToFile(fileName);
+            FileOperations::printToScreen(fileName);
+            return 0;
+        }
         std::cout << "File " << fileName
                   << " already exists. You want rewrite it? 'y/n' ";
         std::string feedback;

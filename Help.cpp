@@ -16,11 +16,13 @@ void Help::getHelp(int argc, char **argv, std::string &fileName) {
                          "./out\n"
                          "write the name of the file: /home/dima/Documents/test.txt\n"
                          "\n"
-                         "program can take optional arguments: nameOfFile and r\n"
+                         "program can take optional arguments: nameOfFile and r or o\n"
                          "for example this command will create or open file test.txt\n"
                          "./out test.txt\n"
-                         "and this command will create and replace current file (if it already exists) test.txt\n"
-                         "./out test.txt r" << std::endl;
+                         "this command will create and replace current file (if it already exists) test.txt\n"
+                         "./out test.txt r\n"
+                         "and this command will open current file test.txt for editing\n"
+                         "./out test.txt o" << std::endl;
             std::exit(0);
         }
     }
