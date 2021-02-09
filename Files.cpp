@@ -24,9 +24,8 @@ int main(int argc, char **argv) {
         std::cout << "rewrite.compare(secondArg) " << rewrite.compare(secondArg) << std::endl;
         std::cout << "open.compare(secondArg) " << open.compare(secondArg) << std::endl;
     }
-    //TODO open existing file with o argument
     if (FileOperations::isFileExists(fileName) && rewrite != secondArg) {
-        if(open == secondArg){
+        if (open == secondArg) {
             FileOperations::printToScreen(fileName);
             FileOperations::writeToFile(fileName);
             FileOperations::printToScreen(fileName);
