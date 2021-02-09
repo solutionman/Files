@@ -7,7 +7,7 @@
 
 class Help {
 public:
-    void getHelp(int argc, char **argv, std::string &fileName);
+    static void getHelp(int argc, char **argv, std::string &fileName);
 };
 
 

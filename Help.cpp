@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include "Help.h"
 
 void Help::getHelp(int argc, char **argv, std::string &fileName) {

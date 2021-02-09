@@ -11,8 +11,7 @@ int main(int argc, char **argv) {
     std::string fileName;
 
     if (argc > 1) {
-        Help help;
-        help.getHelp(argc, argv, fileName);
+        Help::getHelp(argc, argv, fileName);
     } else {
         std::cout << "write the name of the file: ";
         getline(std::cin, fileName);
