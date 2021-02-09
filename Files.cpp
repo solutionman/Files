@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
     }
     if (FileOperations::isFileExists(fileName) && rewrite != doRewrite) {
         std::cout << "File " << fileName
-             << " already exists. You want rewrite it? 'y/n' ";
+                  << " already exists. You want rewrite it? 'y/n' ";
         std::string feedback;
         getline(std::cin, feedback);
         //        if( feedback.compare("y") != 0 ){ return 0; }
