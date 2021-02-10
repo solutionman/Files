@@ -11,8 +11,8 @@ int main(int argc, char **argv) {
     }
     Arguments arguments(argc, argv);
     std::cout << "arguments.getArgc() " << arguments.getArgc() << std::endl;
-    arguments.setArgc(12);
     std::cout << "arguments.getArgc() " << arguments.getArgc() << std::endl;
+    arguments.setArgv(argv);
 
     std::string fileName;
     if (argc > 1) {
