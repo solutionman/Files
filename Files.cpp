@@ -1,5 +1,6 @@
 #include "FileOperations.h"
 #include "Help.h"
+#include "Arguments.h"
 #include <iostream>
 
 int main(int argc, char **argv) {
@@ -8,8 +9,10 @@ int main(int argc, char **argv) {
     for (int i = 0; i < argc; i++) {
         std::cout << argv[i] << std::endl;
     }
-    std::string fileName;
+    Arguments arguments(argc, argv);
+    std::cout << "arguments.getArgc() " << arguments.getArgc() << std::endl;
 
+    std::string fileName;
     if (argc > 1) {
         Help::getHelp(argc, argv, fileName);
     } else {
