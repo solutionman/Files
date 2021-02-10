@@ -7,7 +7,8 @@
 class Arguments {
     public:
         Arguments(int argc, char **argv);
-        int getArgc();
+        int getArgc() const;
+        void setArgc(int argc);
     private:
         int argc;
         std::string argv;
