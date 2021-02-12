@@ -20,7 +20,7 @@ if file in another directory, then name of file and path to file:
 ./out
 write the name of the file: /home/dima/Documents/test.txt
 
-program can take optional arguments: nameOfFile and r
+program can take optional arguments: nameOfFile and r or o
 for example this command will create or open file test.txt
 ./out test.txt
 this command will create and replace current file (if it already exists) test.txt
