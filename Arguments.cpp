@@ -14,7 +14,6 @@ void Arguments::setArgc(int argcTo) {
 }
 
 void Arguments::setArgv(char **argv) {
-//    int j = this->argc;
     for (int i = 0; i < this->argc; ++i) {
         std::cout << "argv[i] " << argv[i] << std::endl;
     }

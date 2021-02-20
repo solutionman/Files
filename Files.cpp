@@ -17,8 +17,10 @@ int main(int argc, char **argv) {
     if (argc > 1) {
         Help::getHelp(argc, argv, fileName);
     } else {
-        std::cout << "write the name of the file: ";
-        getline(std::cin, fileName);
+        do{
+            std::cout << "write the name of the file: ";
+            getline(std::cin, fileName);
+        } while (fileName.empty());
     }
     std::string rewrite = "r";
     std::string open = "o";
