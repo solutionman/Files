@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     if (argc > 1) {
         Help::getHelp(argc, argv, fileName);
     } else {
-        do{
+        do {
             std::cout << "write the name of the file: ";
             getline(std::cin, fileName);
         } while (fileName.empty());
@@ -41,7 +41,6 @@ int main(int argc, char **argv) {
                   << " already exists. You want rewrite it? 'y/n' ";
         std::string feedback;
         getline(std::cin, feedback);
-        //        if( feedback.compare("y") != 0 ){ return 0; }
         if (feedback != "y") {
             return 0;
         }
