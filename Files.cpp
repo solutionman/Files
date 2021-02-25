@@ -12,11 +12,11 @@ int main(int argc, char **argv) {
     Arguments arguments(argc, argv);
 //    std::cout << "arguments.getArgc() " << arguments.getArgc() << std::endl;
 //    arguments.setArgv(argv);
-    if(arguments.getArgv().count(1)){
+    if (arguments.getArgv().count(1)) {
         auto firstArg = arguments.getArgv().find(1);
         std::cout << "your first argument: " << firstArg->second << std::endl;
     }
-    if(arguments.getArgv().count(2)){
+    if (arguments.getArgv().count(2)) {
         auto secondArg = arguments.getArgv().find(2);
         std::cout << "your second argument: " << secondArg->second << std::endl;
     }

@@ -5,7 +5,7 @@ Arguments::Arguments(int argc, char **argv) {
     this->argc = argc;
     for (int i = 0; i < this->argc; ++i) {
 //        std::cout << "argv[i] " << argv[i] << std::endl;
-        this->argv.insert(std::pair<int,std::string>(i, argv[i]));
+        this->argv.insert(std::pair<int, std::string>(i, argv[i]));
     }
 }
 
@@ -20,11 +20,11 @@ void Arguments::setArgc(int argcTo) {
 void Arguments::setArgv(char **argvs) {
     for (int i = 0; i < this->argc; ++i) {
         std::cout << "argv[i] " << argvs[i] << std::endl;
-        this->argv.insert(std::pair<int,std::string>(i, argvs[i]));
+        this->argv.insert(std::pair<int, std::string>(i, argvs[i]));
     }
 }
 
-std::map<int,std::string> Arguments::getArgv(){
+std::map<int, std::string> Arguments::getArgv() {
     return this->argv;
 }
 

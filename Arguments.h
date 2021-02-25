@@ -16,11 +16,11 @@ public:
 
     void setArgv(char **argv);
 
-    std::map<int,std::string> getArgv();
+    std::map<int, std::string> getArgv();
 
 private:
     int argc;
-    std::map<int,std::string> argv;
+    std::map<int, std::string> argv;
 };
 
 
