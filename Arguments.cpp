@@ -16,6 +16,11 @@ void Arguments::setArgc(int argcTo) {
 void Arguments::setArgv(char **argv) {
     for (int i = 0; i < this->argc; ++i) {
         std::cout << "argv[i] " << argv[i] << std::endl;
+        this->argv.insert(std::pair<int,std::string>(i, argv[i]));
     }
+}
+
+std::map<int,std::string> Arguments::getArgv(){
+    return this->argv;
 }
 

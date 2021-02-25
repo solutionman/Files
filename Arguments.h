@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 class Arguments {
 public:
@@ -15,9 +16,11 @@ public:
 
     void setArgv(char **argv);
 
+    std::map<int,std::string> getArgv();
+
 private:
     int argc;
-    std::vector<std::string> argv;
+    std::map<int,std::string> argv;
 };
 
 

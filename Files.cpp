@@ -12,6 +12,8 @@ int main(int argc, char **argv) {
     Arguments arguments(argc, argv);
     std::cout << "arguments.getArgc() " << arguments.getArgc() << std::endl;
     arguments.setArgv(argv);
+    auto element = arguments.getArgv().find(0);
+    std::cout << element->second << std::endl;
 
     std::string fileName;
     if (argc > 1) {
