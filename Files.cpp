@@ -24,13 +24,10 @@ int main(int argc, char **argv) {
 //    std::cout << element->second << std::endl;
 
     std::string fileName;
+    Help::getHelp(argc, argv, fileName);
     if (argc > 1) {
+        fileName = argv[1];
         Help::getHelp(argc, argv, fileName);
-    } else {
-        do {
-            std::cout << "write the name of the file: ";
-            getline(std::cin, fileName);
-        } while (fileName.empty());
     }
     std::string rewrite = "r";
     std::string open = "o";
