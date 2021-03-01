@@ -5,23 +5,13 @@
 
 int main(int argc, char **argv) {
 
-//    std::cout << " You entered  " << argc << " arguments: " << std::endl;
-//    for (int i = 0; i < argc; i++) {
-//        std::cout << argv[i] << std::endl;
-//    }
     Arguments arguments(argc, argv);
-//    std::cout << "arguments.getArgc() " << arguments.getArgc() << std::endl;
-//    arguments.setArgv(argv);
     if (arguments.getArgv().count(1)) {
         auto firstArg = arguments.getArgv().find(1);
-        std::cout << "your first argument: " << firstArg->second << std::endl;
     }
     if (arguments.getArgv().count(2)) {
         auto secondArg = arguments.getArgv().find(2);
-        std::cout << "your second argument: " << secondArg->second << std::endl;
     }
-//    auto element = arguments.getArgv().find(0);
-//    std::cout << element->second << std::endl;
 
     std::string fileName;
     Help::getHelp(argc, argv, fileName);
@@ -34,8 +24,6 @@ int main(int argc, char **argv) {
     std::string secondArg;
     if (argc > 2) {
         secondArg = argv[2];
-        std::cout << "rewrite.compare(secondArg) " << rewrite.compare(secondArg) << std::endl;
-        std::cout << "open.compare(secondArg) " << open.compare(secondArg) << std::endl;
     }
     if (FileOperations::isFileExists(fileName) && rewrite != secondArg) {
         if (open == secondArg) {

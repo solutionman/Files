@@ -3,7 +3,6 @@
 
 void Help::getHelp(int argc, char **argv, std::string &fileName) {
     if (argc == 1 || (fileName == "-h" || fileName == "--h" || fileName == "-help" || fileName == "--help") ) {
-//        fileName = argv[1];
         std::cout << "usage: \n"
                      "type name of file with extension, for example: test.txt\n"
                      "if file in another directory, then name of file and path to file:\n"

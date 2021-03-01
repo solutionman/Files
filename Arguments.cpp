@@ -4,7 +4,6 @@
 Arguments::Arguments(int argc, char **argv) {
     this->argc = argc;
     for (int i = 0; i < this->argc; ++i) {
-//        std::cout << "argv[i] " << argv[i] << std::endl;
         this->argv.insert(std::pair<int, std::string>(i, argv[i]));
     }
 }
