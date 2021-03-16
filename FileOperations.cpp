@@ -57,12 +57,22 @@ void FileOperations::replaceInFile(const std::string &fileName) {
     std::string myText;
     std::ifstream currentFile(fileName);
     std::ofstream temporaryFile("tempFile.txt");
+    bool first = true;
     while (getline(currentFile, myText)) {
         if(myText == searchLine){
-            temporaryFile << std::endl << replacement;
+            if(first){
+                temporaryFile << replacement;
+            } else {
+                temporaryFile << std::endl << replacement;
+            }
         } else {
-            temporaryFile << std::endl << myText;
+            if(first){
+                temporaryFile << myText;
+            } else {
+                temporaryFile << std::endl << myText;
+            }
         }
+        first = false;
     }
     currentFile.close();
     temporaryFile.close();
