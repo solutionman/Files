@@ -12,6 +12,8 @@ public:
     static bool isFileExists(const std::string &name);
 
     static void printToScreen(const std::string &fileName);
+
+    void replaceInFile(const std::string &fileName);
 };
 
 #endif //FILES_FILEOPERATIONS_H

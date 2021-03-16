@@ -1,5 +1,6 @@
 #include "FileOperations.h"
 #include <iostream>
+#include <cstdio>
 
 void FileOperations::writeToFile(const std::string &fileName) {
     std::cout << std::endl;
@@ -41,5 +42,30 @@ void FileOperations::printToScreen(const std::string &fileName) {
         }
         // close the file
         MyReadFile.close();
+    }
+}
+
+void FileOperations::replaceInFile(const std::string &fileName) {
+    std::cout << "Print line to replace";
+    std::string searchLine;
+    getline(std::cin, searchLine);
+    std::cout << "Print what to write instead";
+    std::string replacement;
+    getline(std::cin, replacement);
+
+    std::string myText;
+    std::ifstream currentFile(fileName);
+    std::ofstream temporaryFile("tempFile.txt");
+    while (getline(currentFile, myText)) {
+        if(myText == searchLine){
+            temporaryFile << std::endl << replacement;
+        } else {
+            temporaryFile << std::endl << myText;
+        }
+    }
+    currentFile.close();
+    temporaryFile.close();
+    if(rename("tempFile.txt",  "test.txt") != 0 ){
+        std::cout << "error in replacing in file" << std::endl;
     }
 }
