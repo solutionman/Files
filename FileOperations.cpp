@@ -1,6 +1,7 @@
 #include "FileOperations.h"
 #include <iostream>
 #include <cstdio>
+#include <cstring>
 
 void FileOperations::writeToFile(const std::string &fileName) {
     std::cout << std::endl;
@@ -65,7 +66,10 @@ void FileOperations::replaceInFile(const std::string &fileName) {
     }
     currentFile.close();
     temporaryFile.close();
-    if(rename("tempFile.txt",  "test.txt") != 0 ){
+    int length = fileName.length();
+    char origName[length + 1];
+    strcpy(origName , fileName.c_str());
+    if(rename("tempFile.txt",  origName) != 0 ){
         std::cout << "error in replacing in file" << std::endl;
     }
 }
