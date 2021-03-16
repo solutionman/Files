@@ -59,14 +59,14 @@ void FileOperations::replaceInFile(const std::string &fileName) {
     std::ofstream temporaryFile("tempFile.txt");
     bool first = true;
     while (getline(currentFile, myText)) {
-        if(myText == searchLine){
-            if(first){
+        if (myText == searchLine) {
+            if (first) {
                 temporaryFile << replacement;
             } else {
                 temporaryFile << std::endl << replacement;
             }
         } else {
-            if(first){
+            if (first) {
                 temporaryFile << myText;
             } else {
                 temporaryFile << std::endl << myText;
@@ -78,8 +78,8 @@ void FileOperations::replaceInFile(const std::string &fileName) {
     temporaryFile.close();
     int length = fileName.length();
     char origName[length + 1];
-    strcpy(origName , fileName.c_str());
-    if(rename("tempFile.txt",  origName) != 0 ){
+    strcpy(origName, fileName.c_str());
+    if (rename("tempFile.txt", origName) != 0) {
         std::cout << "error in replacing in file" << std::endl;
     }
 }
