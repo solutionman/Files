@@ -47,10 +47,10 @@ void FileOperations::printToScreen(const std::string &fileName) {
 }
 
 void FileOperations::replaceInFile(const std::string &fileName) {
-    std::cout << "Print line to replace";
+    std::cout << "Print line to replace" << std::endl;
     std::string searchLine;
     getline(std::cin, searchLine);
-    std::cout << "Print what to write instead";
+    std::cout << "Print what to write instead" << std::endl;
     std::string replacement;
     getline(std::cin, replacement);
 
