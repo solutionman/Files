@@ -83,3 +83,30 @@ void FileOperations::replaceInFile(const std::string &fileName) {
         std::cout << "error in replacing in file" << std::endl;
     }
 }
+
+void FileOperations::deleteLine(const std::string &fileName) {
+    std::cout << "Print line to delete" << std::endl;
+    std::string searchLine;
+    getline(std::cin, searchLine);
+    std::string lineInFile;
+    std::ifstream currentFile(fileName);
+    std::ofstream tempFile("tempFile.txt");
+    bool first = true;
+    while (getline(currentFile, lineInFile)){
+        if(lineInFile != searchLine){
+            if(first){
+                tempFile << lineInFile;
+            } else {
+                tempFile << std::endl << lineInFile;
+            }
+            first = false;
+        }
+    }
+    currentFile.close();
+    tempFile.close();
+    char origName[fileName.length() + 1];
+    strcpy(origName, fileName.c_str());
+    if(rename("tempFile.txt", origName) != 0){
+        std::cout << "error in deleting in file" << std::endl;
+    }
+}

@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
         if (feedback != "y") {
             return 0;
         }
-        std::cout << "Open or create new or open and change line? o/c/ch ";
+        std::cout << "Open or create new or open and change/delete line? o/c/ch/d ";
         getline(std::cin, feedback);
         if (feedback == "o") {
             FileOperations::printToScreen(fileName);
@@ -50,6 +50,12 @@ int main(int argc, char **argv) {
             FileOperations::printToScreen(fileName);
             FileOperations fileOperations;
             fileOperations.replaceInFile(fileName);
+            FileOperations::printToScreen(fileName);
+            return 0;
+        } else if (feedback == "d"){
+            FileOperations::printToScreen(fileName);
+            FileOperations fileOperations;
+            fileOperations.deleteLine(fileName);
             FileOperations::printToScreen(fileName);
             return 0;
         }
