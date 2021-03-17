@@ -35,7 +35,7 @@ void FileOperations::printToScreen(const std::string &fileName) {
         // read from text file
         std::ifstream MyReadFile(fileName);
 
-        // use while loop thogether with the getline() function
+        // use while loop together with the getline() function
         // to read the file line by line
         while (getline(MyReadFile, myText)) {
             // Output the text from the file
@@ -79,8 +79,11 @@ void FileOperations::replaceInFile(const std::string &fileName) {
     int length = fileName.length();
     char origName[length + 1];
     strcpy(origName, fileName.c_str());
+    if(remove(origName) != 0){
+        std::cout << "error in removing file " << origName << std::endl;
+    }
     if (rename("tempFile.txt", origName) != 0) {
-        std::cout << "error in replacing in file" << std::endl;
+        std::cout << "error in renaming tempFile.txt" << std::endl;
     }
 }
 
