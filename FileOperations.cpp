@@ -109,6 +109,9 @@ void FileOperations::deleteLine(const std::string &fileName) {
     tempFile.close();
     char origName[fileName.length() + 1];
     strcpy(origName, fileName.c_str());
+    if(remove(origName) != 0){
+        std::cout << "error in removing file " << origName << std::endl;
+    }
     if(rename("tempFile.txt", origName) != 0){
         std::cout << "error in deleting in file" << std::endl;
     }
